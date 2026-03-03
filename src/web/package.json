@@ -1,0 +1,136 @@
+{
+  "name": "automatex-web",
+  "version": "1.0.0",
+  "description": "AutomateX Web UI - Windows任务自动化引擎管理界面",
+  "main": "main.js",
+  "author": "CoCandy",
+  "license": "MIT",
+  "scripts": {
+    "start": "chcp 65001 >nul & electron .",
+    "dev": "chcp 65001 >nul & electron . --dev",
+    "server": "chcp 65001 >nul & python server.py",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:protected": "node scripts/build-protected.js",
+    "pack": "electron-builder --dir",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "bytenode": "^1.5.7",
+    "electron-store": "^8.1.0"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
+    "png-to-ico": "^3.0.1",
+    "sharp": "^0.34.5"
+  },
+  "build": {
+    "appId": "com.automatex.web",
+    "productName": "AutomateX",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main-loader.js",
+      "main.jsc",
+      "preload-loader.js",
+      "preload.jsc",
+      "assets/**/*",
+      "index.html",
+      "!server.py",
+      "!main.js",
+      "!preload.js",
+      "!node_modules/**/*",
+      "node_modules/bytenode/**/*",
+      "node_modules/electron-store/**/*"
+    ],
+    "asar": true,
+    "asarUnpack": [
+      "assets/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "..",
+        "to": "src",
+        "filter": [
+          "**/*.pyc",
+          "**/*.json",
+          "tasks/prompt/select.md",
+          "!**/package.json",
+          "!**/package-lock.json",
+          "!**/__pycache__/**",
+          "!web/**",
+          "!docs/**",
+          "!**/README.md",
+          "!**/examples/**",
+          "!**/messages/**",
+          "!**/*.drawio",
+          "!**/*.txt",
+          "!**/*.bak",
+          "!**/TODO",
+          "!**/.gitignore"
+        ]
+      },
+      {
+        "from": ".",
+        "to": "web",
+        "filter": [
+          "server.pyc",
+          "ws_manager.pyc"
+        ]
+      },
+      {
+        "from": "build/python-embed",
+        "to": "python"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/logo.ico",
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "installerIcon": "assets/logo.ico",
+      "uninstallerIcon": "assets/logo.ico",
+      "installerHeaderIcon": "assets/logo.ico",
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "AutomateX"
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-portable.${ext}"
+    }
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "automatex",
+    "task-automation",
+    "windows",
+    "ai",
+    "electron"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}

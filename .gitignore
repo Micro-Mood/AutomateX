@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# 敏感配置文件 - 不要提交真实的 API keys!
+src/api_config.json
+api_config.json
+.dev/key.json
+
+# 用户配置（含 API Key）
+src/config/user_config.json
+
+# 任务消息数据
+src/tasks/messages/*.json
+src/tasks/store.json
+src/tasks/store.bak
+
+# Electron 构建产物
+src/web/release-*/
+src/web/dist/
+
+# 嵌入式 Python 运行时（构建时自动下载）
+src/web/build/python-embed/
+src/web/build/get-pip.py
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Electron
+out/

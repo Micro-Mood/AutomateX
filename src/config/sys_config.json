@@ -1,0 +1,54 @@
+{
+  "mcp": {
+    "server": {
+      "host": "127.0.0.1",
+      "port": 8080
+    },
+    "workspace": {
+      "root_path": "./workspace"
+    },
+    "security": {
+      "blocked_paths": [
+        "C:/Windows",
+        "C:/Program Files",
+        "C:/Program Files (x86)",
+        "C:/Users/*/AppData"
+      ],
+      "blocked_commands": [
+        "format*",
+        "del /s*",
+        "rd /s /q*",
+        "rmdir /s /q*",
+        "reg delete*",
+        "net user*",
+        "shutdown*",
+        "taskkill /f*"
+      ],
+      "max_file_size_mb": 10
+    },
+    "performance": {
+      "max_concurrent_tasks": 10,
+      "cache_ttl_seconds": 60,
+      "stream_buffer_size_kb": 64,
+      "max_search_results": 1000
+    },
+    "logging": {
+      "level": "INFO",
+      "format": "json"
+    }
+  },
+  "tasks": {
+    "engine": {
+      "max_iterations": 50,
+      "context_max_history": 20
+    },
+    "backend": {
+      "host": "127.0.0.1",
+      "port": 8000
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  }
+}

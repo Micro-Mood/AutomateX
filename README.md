@@ -2,7 +2,9 @@
 
 <div align="center">
 
-**Windows 智能任务自动化引擎**
+<h3>🚀 Windows 智能任务自动化引擎</h3>
+
+**用自然语言驱动你的电脑，让 AI 替你完成重复工作**
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -10,17 +12,42 @@
 
 </div>
 
-## 简介
+---
 
-AutomateX 是一个 AI 驱动的 Windows 自动化任务引擎，支持文件操作、命令执行、内容搜索等多种自动化任务。采用两阶段工具调用架构（V3），相比传统方式降低约 90% 的 Token 消耗。
+## ✨ 为什么选择 AutomateX？
 
-## 特性
+| 传统 AI Agent | AutomateX V3 引擎 |
+|--------------|------------------|
+| 每次调用携带全部工具描述 | 两阶段按需注入，**节省 90% Token** |
+| 单一工具格式 | 紧凑描述格式，**再省 80% Token** |
+| AI 直接执行系统命令 | MCP 安全隔离，**防止危险操作** |
+| 上下文无限增长 | FIFO 滑动窗口，**稳定长对话** |
 
-- 🤖 **AI 驱动** - 支持 Kimi、DeepSeek、Qwen 等大模型
-- ⚡ **Token 优化** - 两阶段工具调用，极大降低 API 成本
-- 🔧 **MCP Server** - 独立的工具服务器，安全隔离执行环境
-- 🖥️ **桌面应用** - Electron 图形界面，开箱即用
-- 📝 **提示词外部化** - 可自定义 AI 行为
+## 🖼️ 界面预览
+
+<table>
+<tr>
+<td align="center"><b>📊 仪表盘</b><br/>任务统计 · 快捷操作</td>
+<td align="center"><b>📋 任务详情</b><br/>执行结果 · 实时反馈</td>
+<td align="center"><b>💬 对话历史</b><br/>AI 交互 · TODO 追踪</td>
+</tr>
+<tr>
+<td><img src="docs/images/dashboard.png" width="280"/></td>
+<td><img src="docs/images/task-detail.png" width="280"/></td>
+<td><img src="docs/images/task-history.png" width="280"/></td>
+</tr>
+</table>
+
+## 🌟 核心特性
+
+| 特性 | 说明 |
+|------|------|
+| 🤖 **多模型支持** | Kimi、DeepSeek、Qwen、GPT 等 OpenAI 兼容 API |
+| ⚡ **极致省钱** | V3 两阶段架构 + 紧凑格式，Token 消耗降低 **90%+** |
+| 🔒 **安全隔离** | MCP Server 独立进程，危险命令自动拦截 |
+| 🖥️ **开箱即用** | Electron 桌面应用，无需命令行 |
+| 📝 **可定制** | 提示词外部化，轻松调整 AI 行为 |
+| 🔄 **智能上下文** | FIFO 窗口管理，支持超长任务对话 |
 
 ## 📖 文档
 

@@ -63,7 +63,7 @@ class OpenAIChatAPI:
             str: 普通回复内容
             dict: 包含 tool_calls 的响应，格式为 {"content": str, "tool_calls": list}
         """
-        url = f"{self.base_url}/v1/chat/completions"
+        url = f"{self.base_url.rstrip('/')}/chat/completions"
         headers = {
             "Authorization": f"Bearer {self.api_key}",
             "Content-Type": "application/json",
